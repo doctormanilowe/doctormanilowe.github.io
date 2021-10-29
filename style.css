@@ -20,6 +20,12 @@ header {
     text-align: center;
 }
 
+footer {
+    text-align: right;
+    margin-top: auto;
+    color: orange;
+}
+
 header h1 {
     font-family: papyrus;
     width: 50%;
@@ -34,7 +40,9 @@ header h1 {
     background: #FFF;
     min-height: calc(100vh - 20px);
     padding: 0.5rem;
-    background-image: url('./assets/Sand-Texture.jpeg')
+    background-image: url('./assets/Sand-Texture.jpeg');
+    display: flex;
+    flex-direction: column;
 }
 
 header img {
