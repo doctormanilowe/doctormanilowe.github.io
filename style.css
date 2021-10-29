@@ -1,0 +1,147 @@
+body {
+    background-color: #a4ffe1;
+}
+
+h1, h2 {
+    color: orange;
+}
+
+#title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-family: papyrus;
+    width: 50%;
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    text-shadow: 4px 2px 2px lightgrey;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    background: #FFF;
+    min-height: calc(100vh - 20px);
+    padding: 0.5rem;
+    background-image: url('./assets/Sand-Texture.jpeg')
+}
+
+header img {
+    width: 20%;
+    min-width: 100px;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    list-style: none;
+    padding-left: 0;
+}
+
+nav li {
+    margin-right: 0;
+    color: orange;
+    border: 1px solid orange;
+    border-radius: 8px;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    margin-left: -1px;
+    font-family: papyrus;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+figure img {
+    width: 100%;
+    margin: auto;
+}
+
+.active-link {
+    text-decoration: underline;
+}
+
+.product {
+    border: 1px solid orange;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.col-50 {
+    width: 45%;
+    padding: 10px;
+}
+
+.col-100 {
+    width: 90%;
+    padding: 10px;
+}
+
+.border-right {
+    border-right: 1px solid#9a9a9a;
+}
+
+.x-divider {
+    display: block;
+    height: 0px;
+    border-top: 1px solid #9a9a9a;
+    border-bottom: 1px solid #fff;
+}
+
+.flex-col-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Mobile */
+@media (max-width: 587px) {
+    .container {
+        width: 95%;
+        margin: auto;
+    }
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .col-50 {
+        width: 100%;
+    }
+    .border-right {
+        border-right: none;
+    }
+}
+
