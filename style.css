@@ -101,7 +101,6 @@ figure img {
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    /* align-items: center; */
 }
 
 .col-50 {
@@ -129,6 +128,11 @@ figure img {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.quiz-multi-choice {
+    list-style: none;
+    padding-left: 0.25rem;
 }
 
 /* Mobile */
