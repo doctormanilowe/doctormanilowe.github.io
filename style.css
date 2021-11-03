@@ -1,5 +1,6 @@
 body {
     background-color: #a4ffe1;
+    font-size: 1.25rem;
 }
 
 h1, h2 {
@@ -134,6 +135,10 @@ figure img {
 .quiz-multi-choice {
     list-style: none;
     padding-left: 0.25rem;
+}
+
+#quiz-container li {
+    margin-bottom: 1rem;
 }
 
 /* Mobile */
