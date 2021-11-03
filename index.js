@@ -93,6 +93,12 @@ let questions = [
             },
             {
                 id: uuidv4(),
+                desc: `By taking a heaped teaspoon into the mouth and ensuring that the sample takes between 3 and 5 seconds to swallow without choking or gagging.`,
+                correct: true,
+                msg: `Well done my dearie! For generations, this is how the Manilowe men have guaranteed the thickness you know, love and demand!`
+            },
+            {
+                id: uuidv4(),
                 desc: `Splatter radius - Darryl throws 3 fl oz at a vertical target from 20 ft away. Correct viscosity will have a splatter radius not exceeding 4 inches.`,
                 correct: false,
                 msg: `This is not how we test viscosity, however one of Darryl's tasks is to splatter the factory windows with 'naise from the inside to prevent Big Mayo spies from observing our processes.`
@@ -102,12 +108,6 @@ let questions = [
                 desc: `The 'naise is sent to a commercial laboratory for analsysis.`,
                 correct: false,
                 msg: `I HAVE NEVER AND WILL NEVER PRACTICE 'NAISE BY NUMBERS.`
-            },
-            {
-                id: uuidv4(),
-                desc: `By taking a heaped teaspoon into the mouth and ensuring that the sample takes between 3 and 5 seconds to swallow without choking or gagging.`,
-                correct: true,
-                msg: `Well done my dearie! For generations, this is how the Manilowe men have guaranteed the thickness you know, love and demand!`
             },
         ],
     },
@@ -135,17 +135,46 @@ let questions = [
             },
             {
                 id: uuidv4(),
+                desc: `None of the these`,
+                correct: true,
+                msg: `'Naise be with you, and also with you! That is the correct answer! None of these 'naise cases are not true. My delicious 'naise has many applications and benefits while inside you and your home.`
+            },
+            {
+                id: uuidv4(),
                 desc: `Lubricating squeaky hinges`,
                 correct: false,
                 msg: `Try again! Even as the creator and owner of Doctor Manilowe's Vegan Mayo, I enjoy busying myself with odd-jobs around my home and production facility, including lubricating the squeaky hinges on the lockers in the employee changing rooms.`
             },
+        ],
+    },
+    {
+        id: uuidv4(),
+        question: `When is The Day of the 5 Mayos celebrated each year?`,
+        options: [
             {
                 id: uuidv4(),
-                desc: `None of the above`,
+                desc: `Cinco de Mayo`,
                 correct: true,
-                msg: `'Naise be with you, and also with you! That is the correct answer! None of the 'naise cases above are not true. My delicious 'naise has many applications and benefits while inside you and your home.`
+                msg: `Feliz Naisemaste! This is correct. In the Manilowe family Cinco de Mayo has long been understood to mean "The Day of the 5 Mayos". Don't get between Daddy Roger and Uncle Raffy, though!`
             },
-
+            {
+                id: uuidv4(),
+                desc: `St Patrick's Day`,
+                correct: false,
+                msg: `I'm afraid that's incorrect! On St Patrick's day I'm usually busy stirring my 'naise into large wooden barrels of stout!`
+            },
+            {
+                id: uuidv4(),
+                desc: `Bring your Daughter/Son to Work Day`,
+                correct: false,
+                msg: `This is the wrong answer! While I do like to encourage my employees to bring their children to my facility so that they can be homeschooled as their parents work (their tiny hands also come in useful for clearing clogged 'naise pipes around the factory!), this would not be a suitable time to celebrate The Day of the 5 Mayos.`
+            },
+            {
+                id: uuidv4(),
+                desc: `Grandpa Tracy's Birthday`,
+                correct: false,
+                msg: `By his very own admission, Grandpa Tracy is a mean old bastard! As the reigning head of the Manilowe family, Grandpa Tracy absolutely forbids the consumption of any 'naise other than his own on his birthday. This answer is incorrect, and you have angered Grandpa Tracy who will now say 5 mean things to my 'naise foreman Darryl because of your mistake. Grandpa Tracy may be old, but he is as strong and grumpy as his 'naise is fresh!`
+            }
         ],
     },
     
@@ -168,41 +197,48 @@ const checkAnswer = () => {
 const resetQuiz = () => {
     // clear quiz
     document.getElementById('quiz-container').innerText = "";
-    // get new question
-    const { id, question, options } = rand(questions);
-    const quizContainer = document.getElementById('quiz-container');
-    const newQuestion = document.createElement('p')
-    const multiChoice = document.createElement('ol');
-    multiChoice.classList.add('quiz-multi-choice');
-    for (let option of options) {
-        const li = document.createElement('li');
-        const input = document.createElement('input');
-        const label = document.createElement('label');
-        label.htmlFor = option.id;
-        label.innerText = option.desc
-        input.id = option.id;
-        input.type = 'radio';
-        input.name = 'question';
-        input.value = option.desc;
-        li.append(input);
-        li.append(label);
-        multiChoice.append(li);
-    }
-    quizContainer.innerText = "";
-    newQuestion.innerText = question;
-    quizContainer.append(newQuestion);
-    quizContainer.append(multiChoice);
-    // add event listener to radios to enable the check answer button when an option is chosen
-    if (document.querySelector('input[name="question"]')) {
-        document.querySelectorAll('input[name="question"]').forEach((elem) => {
-            elem.addEventListener("change", function(e) {
-            if(e.target.value) {
-                document.getElementById('quiz-check-answer').removeAttribute('disabled');
-            }
+    if(questions.length > 0) {
+        // get new question
+        const { id, question, options } = rand(questions);
+        const quizContainer = document.getElementById('quiz-container');
+        const newQuestion = document.createElement('p')
+        const multiChoice = document.createElement('ol');
+        multiChoice.classList.add('quiz-multi-choice');
+        for (let option of options) {
+            const li = document.createElement('li');
+            const input = document.createElement('input');
+            const label = document.createElement('label');
+            label.htmlFor = option.id;
+            label.innerText = option.desc
+            input.id = option.id;
+            input.type = 'radio';
+            input.name = 'question';
+            input.value = option.desc;
+            li.append(input);
+            li.append(label);
+            multiChoice.append(li);
+        }
+        quizContainer.innerText = "";
+        newQuestion.innerText = question;
+        quizContainer.append(newQuestion);
+        quizContainer.append(multiChoice);
+        // add event listener to radios to enable the check answer button when an option is chosen
+        if (document.querySelector('input[name="question"]')) {
+            document.querySelectorAll('input[name="question"]').forEach((elem) => {
+                elem.addEventListener("change", function(e) {
+                if(e.target.value) {
+                    document.getElementById('quiz-check-answer').removeAttribute('disabled');
+                }
+                });
             });
-        });
+        }
+        return [ id, options ];
+    } else {
+        const quizContainer = document.getElementById('quiz-container');
+        quizContainer.innerHTML = "<p>Naisemaste, child! You have completed the quiz! Do try to achieve more highly next time!</p>"
+        document.getElementById('quiz-check-answer').setAttribute('disabled', true);
+        return [ null, null ]
     }
-    return [ id, options ];
 }
 // add event listener to check answer button
 document.getElementById('quiz-check-answer').addEventListener('click', checkAnswer);
