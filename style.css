@@ -92,6 +92,33 @@ figure img {
 
 .product {
     border: 1px solid orange;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -1px;
+    padding: 5px;
+}
+
+.product img {
+    max-height: 200px;
+    margin-left: 5px;
+}
+
+.product h3 {
+    margin-top: 0;
+    color: #000;
+}
+
+.product div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.product .price {
+    color: orange;
+    font-size: 1.8rem;
+    font-weight: bold;
+    align-self: flex-end;
 }
 
 .italic {
@@ -160,6 +187,20 @@ figure img {
     }
     .border-right {
         border-right: none;
+    }
+
+    .product {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .product h3 {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .product img {
+        max-height: 100px;
     }
 }
 
