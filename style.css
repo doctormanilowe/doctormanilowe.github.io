@@ -95,12 +95,12 @@ figure img {
     display: flex;
     justify-content: space-between;
     margin-top: -1px;
-    padding: 5px;
+    padding: 1rem;
 }
 
 .product img {
     max-height: 200px;
-    margin-left: 5px;
+    margin-left: 1rem;
 }
 
 .product h3 {
@@ -119,6 +119,7 @@ figure img {
     font-size: 1.8rem;
     font-weight: bold;
     align-self: flex-end;
+    text-decoration: underline;
 }
 
 .italic {
