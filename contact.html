@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/cb76659413.js" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon.ico">
     <title>Artisanal Vegan 'Naise Products by Dr Emmanuel Manilowe</title>
@@ -29,14 +30,17 @@
         </header>
         <hr>
         <main>
-            <h1>Contact</h1>
-            <main>
-                <article>
-                    <h1>Contact Dr Emmanuel Manilowe</h1>
-                    <p>Coming soon, my Dearies! Naisemaste!</p>
-
-                </article>
-            </main>
+            <article>
+                <h1>Contact Doctor Emmanuel Manilowe</h1>
+                <form id="contact-form" action="https://formspree.io/f/mzboevoa" method="POST">
+                    <label for="email">Your Name</label>
+                    <input id="name" name="name" type="text" required>
+                    <label for="message">Your Message for Doctor Manilowe</label>
+                    <textarea name="message" id="message" cols="30" rows="10" required>Naisemaste, Doctor Manilowe!&#10;I love you!</textarea>
+                    <input type="submit" value="Send">
+                    <p>Follow me on <a href="https://www.instagram.com/doctormanilowe/"><i class="fab fa-instagram-square"></i>Instagram</a></p>
+                </form>
+            </article>
         </main>
         <footer>
             Copyright Emmanuel & Linda Manilowe 2002
