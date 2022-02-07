@@ -65,8 +65,7 @@ nav ul {
 
 nav li, #contact-form input[type="submit"] {
     margin-right: 0;
-    border: 2px inset lightgrey;
-    padding: 0.5rem;
+    border: 2px outset lightgrey;
     font-size: 1.25rem;
     margin: 0.25rem;
     font-family: papyrus;
@@ -78,10 +77,12 @@ nav li a {
     color: black;
     text-decoration: none;
     text-underline-offset: 2px;
+    display: block;
+    padding: 0.5rem;
 }
 
 nav li:active, #contact-form input[type="submit"]:active {
-    border: none;
+    border: inset 2px lightgrey;
     background-color: orange;
 }
 
@@ -192,6 +193,8 @@ figure img {
 #contact-form input[type="submit"] {
     align-self: center;
     margin-bottom: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
 }
 
 #contact-form p {
