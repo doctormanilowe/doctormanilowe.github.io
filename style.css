@@ -43,7 +43,7 @@ header h1 {
     background: #FFF;
     min-height: calc(100vh - 20px);
     padding: 0.5rem;
-    background-image: url('./assets/Sand-Texture.jpeg');
+    background-color: beige;
     display: flex;
     flex-direction: column;
 }
